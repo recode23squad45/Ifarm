@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logística Rural</title>
+    <title>Cooperativa Rural</title>
+    <!-- Incluindo Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        
+        header {
+            background-color: #006400;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        section {
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 100px;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1>Cooperativa Rural Ifarm</h1>
+        <p>Unindo forças para um campo mais forte</p>
+    </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"> Cooperativa Rural</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Serviços</a>
@@ -29,40 +72,28 @@
             </ul>
         </div>
     </nav>
-
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-4">Ifarm</h1>
-            <p class="lead">Cooperativa</p>
-            <div class="container main-content">
-                <!-- <img src="image.png" alt="Ifarm" class="logo"> -->
-            </div>
-    </header>
-
-    <section class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Bem-vindo à nossa Cooperativa Rural!</h2>
-                <p>Somos um espaço dedicado à força da comunidade rural, onde sonhos florescem e ideias se tornam realidade. Nossa cooperativa é um lugar onde agricultores, produtores e moradores rurais se unem para compartilhar conhecimento, experiências
-                    e colheitas. Aqui, cultivamos mais do que apenas a terra; cultivamos relações duradouras e valores sólidos. Nossa missão é apoiar o crescimento sustentável, promover a inovação agrícola e fortalecer laços entre todos os membros da
-                    nossa comunidade. Junte-se a nós na jornada para um campo mais verde, um ambiente mais saudável e um futuro mais vibrante. Seja parte da nossa cooperativa rural e faça parte da transformação que estamos cultivando a cada dia.
-
-                </p>
-            </div>
-            <div class="col-md-6">
-                <h2>Cooperação e comunidade.</h2>
-                <p>Nossa cooperativa é construída sobre os pilares da cooperação e comunidade. Trabalhamos juntos para fortalecer laços, compartilhar recursos e promover o desenvolvimento sustentável de nossa região. Aqui, cada membro é parte fundamental
-                    do nosso sucesso coletivo</p>
-            </div>
-        </div>
+    <section class="container mt-4">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma cooperativa dedicada a promover o desenvolvimento sustentável da agricultura local.</p>
     </section>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2023 Cooperativa Rural. Todos os direitos reservados.</p>
+    <section class="container mt-4">
+        <h2>Produtos</h2>
+        <p>Conheça os produtos frescos e saudáveis que nossos cooperados oferecem...</p>
+    </section>
+    <section class="container mt-4">
+        <h2>Serviços</h2>
+        <p>Além da produção de alimentos, oferecemos uma variedade de serviços para a comunidade...</p>
+    </section>
+    <section class="container mt-4">
+        <h2>Contato</h2>
+        <p>Fale conosco pelo telefone (67) 99999-9999 ou envie um e-mail para contato@cooperativaruralifarm.com</p>
+    </section>
+    <footer class="bg-dark text-white text-center py-2">
+        <p>&copy; 2023 Cooperativa Rural Ifarm</p>
     </footer>
-
+    <!-- Incluindo Bootstrap JS e Popper.js (para recursos interativos) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
