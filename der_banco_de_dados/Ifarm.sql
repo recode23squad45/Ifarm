@@ -52,6 +52,7 @@ CREATE TABLE produto (
 );
 
 create table produto_pedido (
+	id_produto_pedido INT PRIMARY KEY auto_increment,
 	id_pedido INT,
 	id_produto INT,
 	quantidade INT,
