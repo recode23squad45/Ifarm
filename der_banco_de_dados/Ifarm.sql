@@ -56,7 +56,7 @@ create table produto_pedido (
 	id_pedido INT,
 	id_produto INT,
 	quantidade INT,
-	valor_total BIGINT,
+	valor_total float(7,2),
 	FOREIGN KEY(id_pedido) REFERENCES pedido(id_pedido),
 	FOREIGN KEY(id_produto) REFERENCES pedido(id_pedido)
 );
