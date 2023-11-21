@@ -21,7 +21,7 @@ create table concessao_credito (
     id_concessao INT PRIMARY KEY auto_increment,
 	cpf_cooperado varchar(15),
 	cnpj_parceira varchar(20),
-	valor BIGINT,
+	valor float(7,2),
 	dt_concessao varchar(10),
 	FOREIGN KEY(cpf_cooperado) REFERENCES cooperado(cpf),
 	FOREIGN KEY(cnpj_parceira) REFERENCES empresa_parceira(cnpj)
