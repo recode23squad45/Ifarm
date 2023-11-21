@@ -27,14 +27,6 @@ create table concessao_credito (
 	FOREIGN KEY(cnpj_parceira) REFERENCES empresa_parceira(cnpj)
 );
 
-CREATE TABLE evento (
-    id_evento INT PRIMARY KEY auto_increment,
-    nome varchar(60),
-    tipo varchar(15),
-    cpf_cooperado varchar(15),
-    FOREIGN KEY(cpf_cooperado) REFERENCES cooperado(cpf)
-);
-
 CREATE TABLE pedido (
     id_pedido INT PRIMARY KEY auto_increment,
     dt_entrega varchar(15),
