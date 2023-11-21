@@ -50,5 +50,5 @@ create table produto_pedido (
 	quantidade INT,
 	valor_total float(7,2),
 	FOREIGN KEY(id_pedido) REFERENCES pedido(id_pedido),
-	FOREIGN KEY(id_produto) REFERENCES pedido(id_pedido)
+	FOREIGN KEY(id_produto) REFERENCES produto(id_produto)
 );
