@@ -57,7 +57,7 @@
 			        </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contato.jsp">Contato</a>
+                    <a class="nav-link" href="eventos.jsp">Eventos</a>
                 </li>
             </ul>
         </div>
