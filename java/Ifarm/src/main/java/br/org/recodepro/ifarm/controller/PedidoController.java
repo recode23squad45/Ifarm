@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.org.recodepro.ifarm.dao.PedidoDAO;
+import br.org.recodepro.ifarm.dao.ProdutoPedidoDAO;
 import br.org.recodepro.ifarm.modelo.Pedido;
 
 @WebServlet("/pedidos")
@@ -33,19 +34,36 @@ public class PedidoController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String idPedido = request.getParameter("delete");
+		if (idPedido != null) {
+			System.out.println("deletando pedido: " + idPedido);
+			deletar(idPedido);
+			response.sendRedirect(request.getContextPath() + "/pedidos");
+		} else {
+			PedidoDAO dao = new PedidoDAO();
+	
+			Pedido pedido = new Pedido();
+			pedido.setCnpjCliente(request.getParameter("cnpjCliente"));
+			pedido.setDtEntrega(request.getParameter("dtEntrega"));
+			pedido.setTipoPedido(request.getParameter("tipoPedido"));
+			pedido.setStatus("CRIADO");
+			String valorTotalString = request.getParameter("valorTotal");
+			Double totalString = Double.valueOf(valorTotalString);
+			pedido.setValorTotal(totalString);
+	
+			dao.create(pedido);
+	
+			response.sendRedirect(request.getContextPath() + "/cad_pedido.jsp");
+		}
+	}
+
+	private void deletar(String idPedido) {
+		Integer id = Integer.parseInt(idPedido);
+		
+		ProdutoPedidoDAO produtoPedidoDao = new ProdutoPedidoDAO();
+		produtoPedidoDao.deleteByPedidoId(id);
+
 		PedidoDAO dao = new PedidoDAO();
-		
-		Pedido pedido = new Pedido();
-		pedido.setCnpjCliente(request.getParameter("cnpjCliente"));
-		pedido.setDtEntrega(request.getParameter("dtEntrega"));
-		pedido.setTipoPedido(request.getParameter("tipoPedido"));
-		pedido.setStatus("CRIADO");
-		String valorTotalString = request.getParameter("valorTotal");
-		Double totalString = Double.valueOf(valorTotalString);
-		pedido.setValorTotal(totalString);
-		
-		dao.create(pedido);
-		
-		response.sendRedirect(request.getContextPath() + "/cad_pedido.jsp");
+		dao.delete(id);
 	}
 }

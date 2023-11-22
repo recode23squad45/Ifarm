@@ -203,4 +203,62 @@ public class ConcessaoCreditoDAO {
 			}
 		}
 	}
+
+	public void deleteByCooperadoId(String cpfToDelete) {
+		String sql = "DELETE FROM concessao_credito WHERE cpf_cooperado = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			ConectarDB conectarDb = new ConectarDB();
+			conn = conectarDb.conectar();
+			pstm = conn.prepareStatement(sql);
+
+			pstm.setString(1, cpfToDelete);
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void deleteByEmpresaParceiraId(String cnpjEmpresaParceira) {
+		String sql = "DELETE FROM concessao_credito WHERE cnpj_parceira = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			ConectarDB conectarDb = new ConectarDB();
+			conn = conectarDb.conectar();
+			pstm = conn.prepareStatement(sql);
+
+			pstm.setString(1, cnpjEmpresaParceira);
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

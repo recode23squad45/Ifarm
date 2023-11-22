@@ -36,23 +36,37 @@ public class ConcessaoCreditoController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String idConcessao = request.getParameter("delete");
+		if (idConcessao != null) {
+			System.out.println("deletando concessao de credito: " + idConcessao);
+			deletar(idConcessao);
+			response.sendRedirect(request.getContextPath() + "/concessao_credito");
+		} else {
+			ConcessaoCreditoDAO dao = new ConcessaoCreditoDAO();
+			
+			ConcessaoCredito concessao = new ConcessaoCredito();
+			Cooperado cooperado = new Cooperado();
+			cooperado.setCpf(request.getParameter("cpfCooperado"));
+			concessao.setCooperado(cooperado);
+			EmpresaParceira empresaParceira = new EmpresaParceira();
+			empresaParceira.setCnpj(request.getParameter("cnpjEmpresaParceira"));
+			concessao.setEmpresaParceira(empresaParceira);
+			String valorString = request.getParameter("valor");
+			Double valor = Double.parseDouble(valorString);
+			concessao.setValor(valor);
+			concessao.setDtConcessao(request.getParameter("dtConcessao"));
+			
+			dao.create(concessao);
+			
+			response.sendRedirect(request.getContextPath() + "/cad_concessao_credito.jsp");
+		}
+	}
+
+	private void deletar(String idConcessao) {
 		ConcessaoCreditoDAO dao = new ConcessaoCreditoDAO();
+		Integer id = Integer.parseInt(idConcessao);
 		
-		ConcessaoCredito concessao = new ConcessaoCredito();
-		Cooperado cooperado = new Cooperado();
-		cooperado.setCpf(request.getParameter("cpfCooperado"));
-		concessao.setCooperado(cooperado);
-		EmpresaParceira empresaParceira = new EmpresaParceira();
-		empresaParceira.setCnpj(request.getParameter("cnpjEmpresaParceira"));
-		concessao.setEmpresaParceira(empresaParceira);
-		String valorString = request.getParameter("valor");
-		Double valor = Double.parseDouble(valorString);
-		concessao.setValor(valor);
-		concessao.setDtConcessao(request.getParameter("dtConcessao"));
-		
-		dao.create(concessao);
-		
-		response.sendRedirect(request.getContextPath() + "/cad_concessao_credito.jsp");
+		dao.delete(id);
 	}
 	
 }

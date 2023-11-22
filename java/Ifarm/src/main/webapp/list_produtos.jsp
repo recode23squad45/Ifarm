@@ -55,7 +55,7 @@
                         <td>${produto.quantidade}</td>
                         <td>${produto.categoria}</td>
                         <td>
-                            <form action="/Ifarm/produtos?delete=${concessao.idConcessao}" method="post">
+                            <form action="/Ifarm/produtos?delete=${produto.idProduto}" method="post">
 		                        <button type="submit" class="btn btn-danger">Excluir</button>
 		                    </form>
                         </td>

@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.org.recodepro.ifarm.dao.ProdutoDAO;
-import br.org.recodepro.ifarm.modelo.Produto;
+import br.org.recodepro.ifarm.dao.ConcessaoCreditoDAO;
+import br.org.recodepro.ifarm.dao.CooperadoDAO;
+import br.org.recodepro.ifarm.modelo.Cooperado;
 
-@WebServlet("/produtos")
+@WebServlet("/cooperados")
 public class CooperadoController extends HttpServlet {
 
 	/**
@@ -22,28 +23,43 @@ public class CooperadoController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProdutoDAO dao = new ProdutoDAO();
+		CooperadoDAO dao = new CooperadoDAO();
 
-		List<Produto> listaDeProdutos = dao.readAll();
+		List<Cooperado> listaDeCooperados = dao.readAll();
 
-		request.setAttribute("produtos", listaDeProdutos);
+		request.setAttribute("cooperados", listaDeCooperados);
 
-		request.getRequestDispatcher("/list_produtos.jsp").forward(request, response);
+		request.getRequestDispatcher("/list_cooperados.jsp").forward(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProdutoDAO dao = new ProdutoDAO();
-		
-		Produto produto = new Produto();
-		produto.setNomeProduto(request.getParameter("nomeProduto"));
-		produto.setCategoria(request.getParameter("categoria"));
-		String quantidadeString = request.getParameter("quantidade");
-		Integer quantidade = Integer.parseInt(quantidadeString);
-		produto.setQuantidade(quantidade);
+		String cpfToDelete = request.getParameter("delete");
+		if (cpfToDelete != null) {
+			System.out.println("deletando cooperado: " + cpfToDelete);
+			deletar(cpfToDelete);
+			response.sendRedirect(request.getContextPath() + "/cooperados");
+		} else {
+			CooperadoDAO dao = new CooperadoDAO();
+			
+			Cooperado cooperado = new Cooperado();
+			cooperado.setCpf(request.getParameter("cpf"));
+			cooperado.setNomeCooperado(request.getParameter("nomeCooperado"));
+			cooperado.setEndereco(request.getParameter("endereco"));
+			cooperado.setTelefone(request.getParameter("telefone"));
+			
+			dao.create(cooperado);
+			
+			response.sendRedirect(request.getContextPath() + "/cad_cooperado.jsp");
+		}
+	}
 
-		dao.create(produto);
+	private void deletar(String cpfToDelete) {
+		// deletar dependencia de concessao_credito
+		ConcessaoCreditoDAO concessaoCreditoDao = new ConcessaoCreditoDAO();
+		concessaoCreditoDao.deleteByCooperadoId(cpfToDelete);
 		
-		response.sendRedirect(request.getContextPath() + "/cad_produto.jsp");
+		CooperadoDAO dao = new CooperadoDAO();
+		dao.delete(cpfToDelete);
 	}
 }

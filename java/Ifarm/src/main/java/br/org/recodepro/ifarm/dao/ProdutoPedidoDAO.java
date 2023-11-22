@@ -240,4 +240,62 @@ public class ProdutoPedidoDAO {
 			}
 		}
 	}
+
+	public void deleteByProdutoId(Integer produtoId) {
+		String sql = "DELETE FROM produto_pedido WHERE id_produto = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			ConectarDB conectarDb = new ConectarDB();
+			conn = conectarDb.conectar();
+			pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, produtoId);
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void deleteByPedidoId(Integer pedidoId) {
+		String sql = "DELETE FROM produto_pedido WHERE id_pedido = ?";
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+
+		try {
+			ConectarDB conectarDb = new ConectarDB();
+			conn = conectarDb.conectar();
+			pstm = conn.prepareStatement(sql);
+
+			pstm.setInt(1, pedidoId);
+			pstm.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
