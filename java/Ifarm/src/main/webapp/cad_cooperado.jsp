@@ -38,7 +38,7 @@
         <h1 class="text-center mb-4">Cadastro de Cooperado</h1>
         
         <form action="/Ifarm/cooperados" method="post">
-        	<input type="hidden" id="cpfEditar" name="cpfEditar" value="${cooperado.cpf}">
+        	<input type="hidden" id="cpfEditar" name="cpfEditar" value="${edit.cpf}">
             <div class="mb-3">
                 <label for="cpf" class="form-label">CPF:</label>
                 <input type="text" class="form-control" id="cpf" name="cpf" value="${edit.cpf}" required>
