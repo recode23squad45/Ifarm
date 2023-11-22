@@ -46,7 +46,7 @@ public class CooperadoController extends HttpServlet {
 		String cpfEditar = request.getParameter("cpfEditar");
 		String cpfToDelete = request.getParameter("delete");
 		
-		if (cpfEditar != null) {
+		if (cpfEditar != null && cpfEditar != "") {
 			System.out.println("editando cooperado: " + cpfEditar);
 			
 			CooperadoDAO dao = new CooperadoDAO();

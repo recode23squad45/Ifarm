@@ -37,7 +37,7 @@
                 <img src="imagem/fundo4.jpeg" id="imgSlide" class="d-block w-100 img-fluid" alt="Imagem Rural">
                 <div class="carousel-caption position-absolute top-0 start-50 translate-middle-x">
                     <a href="sobrenos.jsp" style="text-decoration: none; color: inherit;">
-                        <h2 id="h2" class="mb-3 desktop-font" style="margin-top: -130px; text-shadow: 2px -2px 4px rgba(1, 1, 1, 1);">Venha conhecer a Ifarm.</h2>
+                        <h2 id="h2" class="mb-3 desktop-font" style="text-shadow: 2px -2px 4px rgba(1, 1, 1, 1);">Venha conhecer a Ifarm.</h2>
                     </a>
 
                 </div>

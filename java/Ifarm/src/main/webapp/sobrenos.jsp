@@ -24,7 +24,7 @@
                     <h1 id="h1" class="mb-4 text-center">
                         Cooperativa Rural Ifarm
                     </h1>
-                    <p id="h1" class="mb-2 text-center">Unindo forÃ§as para um campo mais forte.</p>
+                    <p id="h1" class="mb-2 text-center">Unindo forças para um campo mais forte.</p>
                     </p>
                 </div>
             </div>
@@ -39,13 +39,14 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h1 class="text-center mb-4">Sobre a Cooperativa iFarm</h1>
-                <p>Bem-vindo Ã  Cooperativa iFarm, onde a colaboraÃ§Ã£o e o crescimento sustentÃ¡vel sÃ£o os pilares que impulsionam nossa comunidade agrÃ­cola...</p>
-                <p>Nossa missÃ£o Ã© simples, mas impactante: fomentar o desenvolvimento agrÃ­cola de maneira integrada e consciente, impulsionando o sucesso de nossos agricultores e enriquecendo nossa comunidade...</p>
-                <p>Acreditamos na forÃ§a da uniÃ£o e na partilha de conhecimento. Na Cooperativa iFarm, valorizamos a Ã©tica, o respeito ao meio ambiente e a busca incessante por mÃ©todos agrÃ­colas sustentÃ¡veis...</p>
-                <p>Ao fazer parte da iFarm, vocÃª nÃ£o estÃ¡ apenas se tornando membro de uma cooperativa; estÃ¡ se tornando parte de uma famÃ­lia que prospera junto...</p>
-                <p>Convidamos vocÃª a se juntar a nÃ³s nesta jornada de crescimento, aprendizado e realizaÃ§Ã£o. Seja vocÃª um agricultor experiente, um entusiasta da agricultura sustentÃ¡vel ou alguÃ©m que valoriza produtos locais de qualidade, a iFarm Ã© o lugar
-                    onde vocÃª pertence...</p>
-                <p>Obrigado por visitar a Cooperativa iFarm e fazer parte do nosso movimento de transformaÃ§Ã£o agrÃ­cola.</p>
+                <p>Bem-vindo a Cooperativa iFarm, onde a colaboração e o crescimento sustentavel são os pilares que impulsionam nossa comunidade agrícola...</p>
+                <p><p>Nossa missão é simples, mas impactante: fomentar o desenvolvimento agrícola de maneira integrada e consciente, impulsionando o sucesso de nossos agricultores e enriquecendo nossa comunidade...</p>
+<p>Acreditamos na força da união e na partilha de conhecimento. Na Cooperativa iFarm, valorizamos a ética, o respeito ao meio ambiente e a busca incessante por métodos agrícolas sustentáveis...</p>
+<p>Ao fazer parte da iFarm, você não está apenas se tornando membro de uma cooperativa; está se tornando parte de uma família que prospera junto...</p>
+<p>Convidamos você a se juntar a nós nesta jornada de crescimento, aprendizado e realização. Seja você um agricultor experiente, um entusiasta da agricultura sustentável ou alguém que valoriza produtos locais de qualidade, a iFarm é o lugar
+    onde você pertence...</p>
+<p>Obrigado por visitar a Cooperativa iFarm e fazer parte do nosso movimento de transformação agrícola.</p>
+</p>
                 <p class="text-center">Equipe iFarm</p>
             </div>
         </div>
