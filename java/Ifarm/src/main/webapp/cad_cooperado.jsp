@@ -38,21 +38,22 @@
         <h1 class="text-center mb-4">Cadastro de Cooperado</h1>
         
         <form action="/Ifarm/cooperados" method="post">
+        	<input type="hidden" id="cpfEditar" name="cpfEditar" value="${cooperado.cpf}">
             <div class="mb-3">
                 <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" required>
+                <input type="text" class="form-control" id="cpf" name="cpf" value="${edit.cpf}" required>
             </div>
             <div class="mb-3">
                 <label for="nomeCooperado" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="nomeCooperado" name="nomeCooperado" required>
+                <input type="text" class="form-control" id="nomeCooperado" name="nomeCooperado" value="${edit.nomeCooperado}" required>
             </div>
             <div class="mb-3">
                 <label for="endereco" class="form-label">Endereço:</label>
-                <input type="text" class="form-control" id="endereco" name="endereco" required>
+                <input type="text" class="form-control" id="endereco" name="endereco" value="${edit.endereco}" required>
             </div>
             <div class="mb-3">
                 <label for="telefone" class="form-label">Telefone:</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" required>
+                <input type="text" class="form-control" id="telefone" name="telefone" value="${edit.telefone}" required>
             </div>
             <div class="mb-3 text-left">
             	<button type="submit" class="btn btn-primary">Cadastrar</button>

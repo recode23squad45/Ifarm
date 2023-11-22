@@ -44,7 +44,7 @@
                     <th>Nome</th>
                     <th>Endereço</th>
                     <th>Telefone</th>
-                    <th>Ações</th>
+                    <th colspan="2">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +54,9 @@
                         <td>${cooperado.nomeCooperado}</td>
                         <td>${cooperado.endereco}</td>
                         <td>${cooperado.telefone}</td>
+                        <td>
+                        	<a class="btn btn-warning" href="/Ifarm/cooperados?edit=${cooperado.cpf}" role="button">Editar</a>
+                        </td>
                         <td>
 			                <form action="/Ifarm/cooperados?delete=${cooperado.cpf}" method="post">
 		                        <button type="submit" class="btn btn-danger">Excluir</button>
